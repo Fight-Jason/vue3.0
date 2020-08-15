@@ -7,7 +7,7 @@
             <p class="actions">
                 <a href="#">Github</a>
                 <a href="#">开始</a>
-                <router-link to="/doc">doc</router-link>
+                <router-link to="/doc">doc </router-link>
             </p>
         </div>
     </div>

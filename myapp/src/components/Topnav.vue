@@ -17,9 +17,9 @@ import { inject, Ref } from 'vue'
       name : 'Topnav',
       setup() {
         const asideVisible = inject<Ref< boolean>>('xxxx')
-        console.log(`topnav 获取的asideVisible 为 ${asideVisible.value}`)
         const toggleMenu = () => {
           asideVisible.value = !asideVisible.value;
+           console.log(`topnav 获取的asideVisible 为 ${asideVisible.value}`)
         }
         return { toggleMenu }
       }
