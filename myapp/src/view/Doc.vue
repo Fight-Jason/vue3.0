@@ -6,11 +6,11 @@
             <div class="menu"></div>
         </div>
         <div class="content">
-            <aside>
+            <aside v-show="asideVisible">
                 <h2>组件列表</h2>
                 <ol>
                     <li>
-                        <router-link to="/doc/swich">Switch 组件</router-link>
+                        <router-link to="/doc/Switch">Switch 组件</router-link>
                     </li>
                     <li>
                         <router-link to="/doc/button">Button 组件</router-link>
@@ -30,8 +30,14 @@
 
 <script lang="ts">
     import Topnav from '../components/Topnav.vue'
+    import { inject, Ref } from 'vue'
     export default {
         name: 'doc',
+        setup() {
+            const asideVisible = inject<Ref< boolean>>('xxxx')
+            console.log(`Doc 获取的asideVisible 为 ${asideVisible.value}`)
+            return { asideVisible }
+        },
         components: {
             Topnav
         }
@@ -42,10 +48,7 @@
     aside {
         background: lightblue;
         width: 150px;
-        height: 16px;
-        position: fixed;
-        top: 0;
-        left: 0;
+        padding: 16px;
         > h2 {
             margin-bottom: 4px;
         }
@@ -53,6 +56,14 @@
             > li {
                 padding: 4px 0;
             }
+        }
+
+        @media (max-width: 500px) {
+            height: auto;
+            position: fixed;
+            padding-top: 70px;
+            top: 0;
+            left: 0;
         }
     }
 </style>

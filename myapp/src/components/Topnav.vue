@@ -6,13 +6,23 @@
                 <li>菜单1</li>
                 <li>菜单2</li>
             </ul>
+            <span class="toggleAside" @click="toggleMenu"></span>
         </div>
     </div>
 </template>
 
 <script lang="ts">
+import { inject, Ref } from 'vue'
     export default {
-        
+      name : 'Topnav',
+      setup() {
+        const asideVisible = inject<Ref< boolean>>('xxxx')
+        console.log(`topnav 获取的asideVisible 为 ${asideVisible.value}`)
+        const toggleMenu = () => {
+          asideVisible.value = !asideVisible.value;
+        }
+        return { toggleMenu }
+      }
     }
 </script>
 <style lang="scss" scoped>  
@@ -20,6 +30,8 @@
   background: pink;
   display: flex;
   padding: 16px;
+  position: relative;
+  z-index: 10;
   > .logo {
     max-width: 6em;
     margin-right: auto;
@@ -32,5 +44,29 @@
       margin: 0 1em;
     }
   }
+
+  > .toggleAside {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background: red;
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform:  translateY(-50%);
+    display: none;
+  }
+
+  @media (max-width: 500px) {
+    > .menu {
+      display: none;
+    }
+    > .logo {
+      margin: 0 auto ;
+    }
+    > .toggleAside {
+      display: inline-block;
+    }
+  } 
 }
 </style>
