@@ -14,7 +14,8 @@ import { ref } from 'vue'
         },
         setup(props,context) {
             const toggle = ()=> {
-                context.emit('input', !props.value)
+                // context.emit('input', !props.value)
+                context.emit('update:show', !props.value)
             }
             return {toggle } 
         }
@@ -23,7 +24,7 @@ import { ref } from 'vue'
 </script>
 
 <style lang="scss" scoped>
-    $h: 22px;
+    $h: 24px;
     $h2: $h - 4px;
     button{
         height: $h;
@@ -32,24 +33,35 @@ import { ref } from 'vue'
         background: gray;
         border-radius: $h / 2;
         position: relative;
-    }
-    span {
-        position: absolute;
-        top: 2px;
-        left: 2px;
-        height: $h2;
-        width: $h2;
-        background: white;
-        border-radius: $h2 / 2;
-        transition: left .3s;
-    }
-    button.checked  {
-        background: blue;
-    }
-    button.checked > span {
-        left: calc(100% - #{$h2} - 2px);
-    }
-    button:focus {
-        outline: none;
+        span {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            height: $h2;
+            width: $h2;
+            background: white;
+            border-radius: $h2 / 2;
+            transition: left .3s;
+        }
+        &.checked  {
+            background: #1890ff;
+            > span {
+                left: calc(100% - #{$h2} - 2px);
+            }
+        }
+        &:focus {
+            outline: none;
+        }
+        &:active {
+            > span {
+                width: $h2 + 4px;
+            }
+        }
+        &.checked:active {
+            > span {
+                width: $h2 + 4px;
+                margin-left: -4px;
+            }
+        }
     }
 </style>

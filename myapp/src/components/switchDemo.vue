@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Switch :value="value" @input="value = $event" />
+        <Switch :value="value"  @update:show="value = $event" />
     </div>
 </template>
 
@@ -11,7 +11,8 @@ export default {
     name: 'switchDemo',
     setup() {
         const value = ref(false)
-        return {value}
+        const bool = ref(false)
+        return { value, bool }
     },
     components: {
         Switch
