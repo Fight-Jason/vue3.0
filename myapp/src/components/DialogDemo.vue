@@ -6,13 +6,18 @@
     <h1>我是内容具名插槽</h1>
   </template>
 </Dialog>
+<Button @click="showDialog">openDialog </Button>
 </template>
 
-<script>
+<script lang="ts">
 import Dialog from '../lib/Dialog.vue'
 import Button from '../lib/Button.vue'
 import {
-  ref
+  openDialog
+} from '../lib/openDialog.ts'
+import {
+  ref,
+  h
 } from 'vue'
 export default {
   components: {
@@ -29,13 +34,26 @@ export default {
       return true
     }
     const cancel = () => {
-
+      return false
+    }
+    const showDialog = () => {
+      openDialog({
+        title: h('strong', {}, '标题'),
+        content: '你好',
+        confirm() {
+          console.log('confirm')
+        },
+        cancel() {
+          console.log('cancel')
+        }
+      })
     }
     return {
       x,
       toggle,
       confirm,
-      cancel
+      cancel,
+      showDialog
     }
   }
 }
