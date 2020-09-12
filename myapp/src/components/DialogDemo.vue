@@ -2,7 +2,9 @@
 <div>Dialog 示例</div>
 <Button @click="toggle">Toggle </Button>
 <Dialog title="title" v-model:visible="x" :closeOnClickOverlay="false" :confirm="confirm" :cancel="cancel">
-  <h1>123</h1>
+  <template v-slot:content>
+    <h1>我是内容具名插槽</h1>
+  </template>
 </Dialog>
 </template>
 

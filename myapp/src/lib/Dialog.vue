@@ -8,7 +8,7 @@
         <span class="gulu-dialog-close" @click="close"></span>
       </header>
       <main>
-        <slot />
+        <slot name="content" />
       </main>
       <footer>
         <Button level="main" @click="confirm">ok</Button>
