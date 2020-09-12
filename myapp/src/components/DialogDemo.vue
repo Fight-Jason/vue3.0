@@ -1,7 +1,9 @@
 <template>
 <div>Dialog 示例</div>
 <Button @click="toggle">Toggle </Button>
-<Dialog v-model:visible="x" :closeOnClickOverlay="false" :confirm="confirm" />
+<Dialog title="title" v-model:visible="x" :closeOnClickOverlay="false" :confirm="confirm" :cancel="cancel">
+  <h1>123</h1>
+</Dialog>
 </template>
 
 <script>
@@ -22,12 +24,16 @@ export default {
     }
     const confirm = () => {
       console.log(1)
-      return true 
+      return true
+    }
+    const cancel = () => {
+
     }
     return {
       x,
       toggle,
-      confirm
+      confirm,
+      cancel
     }
   }
 }
