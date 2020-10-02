@@ -5,7 +5,7 @@ import Doc from './view/Doc.vue';
 import Switch from './components/switchDemo.vue';
 import Button from './components/ButtonDemo.vue';
 import Dialog from './components/DialogDemo.vue';
-import Tabs from './components/Tabs.vue';
+import Tabs from './components/TabsDemo.vue';
 
 const history  = createWebHashHistory();
 export const router = createRouter({
