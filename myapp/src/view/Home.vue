@@ -113,7 +113,7 @@ $color: #28d1c9;
       padding: 8px 24px;
       border-radius: $boder-radius;
       &:hover {
-          text-decoration: none;
+        text-decoration: none;
       }
     }
   }

@@ -1,25 +1,19 @@
 <template>
-    <div>
-        <Switch :value="value"  @update:show="value = $event" />
-    </div>
+  <div>
+    <Switch v-model:value="bool"/>
+    <!-- <Switch :value="value"  @update:show="value = $event" /> -->
+  </div>
 </template>
-
 <script lang="ts">
-import Switch from "../lib/switch.vue"
-import { ref } from 'vue';
+import Switch from '../lib/Switch.vue'
+import { ref } from 'vue'
 export default {
-    name: 'switchDemo',
-    setup() {
-        const value = ref(false)
-        const bool = ref(false)
-        return { value, bool }
-    },
-    components: {
-        Switch
-    }
-};
+  components: {
+    Switch
+  },
+  setup(){
+    const bool = ref(false)
+    return {bool}
+  }
+}
 </script>
-
-<style lang="scss" scoped>
-
-</style>
