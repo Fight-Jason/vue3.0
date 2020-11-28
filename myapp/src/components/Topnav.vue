@@ -1,7 +1,11 @@
 <template>
     <div>
         <div class="topnav">
-            <div class="logo">LOGO</div>
+            <div class="logo">
+              <svg class="icon">
+                  <use xlink:href="#icon-king"></use>
+              </svg>
+            </div>
             <ul class="menu">
                 <li>菜单1</li>
                 <li>菜单2</li>
@@ -26,15 +30,25 @@ import { inject, Ref } from 'vue'
     }
 </script>
 <style lang="scss" scoped>  
+$color: #28d1c9;
 .topnav {
-  background: pink;
+  color: $color;
   display: flex;
   padding: 16px;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   z-index: 10;
+  justify-content: center;
+  align-items: center;
   > .logo {
     max-width: 6em;
     margin-right: auto;
+    > svg {
+      width: 32px;
+      height: 32px;
+    }
   }
   > .menu {
     display: flex;
