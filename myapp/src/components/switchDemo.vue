@@ -5,7 +5,7 @@
     <h2>常规用法</h2>
     <div class="demo-code">
       <SwitchDemo1 />
-      <pre>{{SwitchDemo1.__sourceCode}}</pre>
+      <pre class="language-html" v-html="Prism.highlight(SwitchDemo1.__sourceCode, Prism.languages.html, 'html')" />
     </div>
   </div>
   <div class="demo">
@@ -17,17 +17,20 @@
     </div>
     <div class="demo-code">
       <SwitchDemo2 />
-      <pre>{{SwitchDemo2.__sourceCode}}</pre>
+      <pre class="language-html" v-html="Prism.highlight(SwitchDemo2.__sourceCode, Prism.languages.html, 'html')" />
     </div>
   </div>
 </div>
 </template>
 
 <script lang="ts">
-import Switch from '../lib/Switch.vue'
-import Button from '../lib/Button.vue'
-import SwitchDemo1 from './SwitchDemo1.vue'
-import SwitchDemo2 from './SwitchDemo2.vue'
+import Switch from '../lib/Switch.vue';
+import Button from '../lib/Button.vue';
+import SwitchDemo1 from './SwitchDemo1.vue';
+import SwitchDemo2 from './SwitchDemo2.vue';
+import 'prismjs';
+import 'prismjs/themes/prism.css'
+const Prism = (window as any).Prism
 import {
   ref
 } from 'vue'
@@ -39,9 +42,13 @@ export default {
     SwitchDemo2
   },
   setup() {
-    const bool = ref(false)
+    const bool = ref(false);
+    console.log(Prism)
     return {
-      bool, SwitchDemo1 , SwitchDemo2
+      bool,
+      SwitchDemo1,
+      SwitchDemo2,
+      Prism
     }
   }
 }
