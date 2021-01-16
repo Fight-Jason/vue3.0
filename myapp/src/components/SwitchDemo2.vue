@@ -1,5 +1,5 @@
 <demo>
-常规用法
+禁止用法
 </demo>
 <template>
     <div>
