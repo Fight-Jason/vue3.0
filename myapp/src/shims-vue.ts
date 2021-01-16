@@ -1,3 +1,4 @@
+// @ts-nocheck
 declare module '*.vue' {
     import { componentOptions } from 'vue'
     const componentOptions :  componentOptions
