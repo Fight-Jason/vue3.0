@@ -8,7 +8,7 @@ import Dialog from './components/DialogDemo.vue';
 import Tabs from './components/TabsDemo.vue';
 import Markdown from '../src/components/Markdown.vue'
 import intor from './markdown/intor.md'
-import install from './markdown/intor.md'
+import install from './markdown/install.md'
 import getStarted from './markdown/get-started.md'
 import { h } from 'vue';
 /*

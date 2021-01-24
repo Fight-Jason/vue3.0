@@ -5,7 +5,7 @@
             <h1>xxxx</h1>
             <h2>厉害的 UI 框架</h2>
             <p class="actions">
-                <a href="#">Github</a>
+                <a href="https://fight-jason.github.io/jason-ui-website/">Github</a>
                 <a href="#">开始</a>
                 <router-link to="/doc">doc </router-link>
             </p>
