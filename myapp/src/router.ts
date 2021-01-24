@@ -7,8 +7,16 @@ import Button from './components/ButtonDemo.vue';
 import Dialog from './components/DialogDemo.vue';
 import Tabs from './components/TabsDemo.vue';
 import Markdown from '../src/components/Markdown.vue'
+import intor from './markdown/intor.md'
+import install from './markdown/intor.md'
+import getStarted from './markdown/get-started.md'
 import { h } from 'vue';
-const md = fileName => h(Markdown, { path: `../Markdown/${fileName}`, key: fileName });
+/*
+    bugfix 2022-1-24
+    rollup 不支持 import 拼接字符串
+*/
+// const md = fileName => h(Markdown, { path: `../Markdown/${fileName}`, key: fileName });
+const md = String => h(Markdown, { content: String , key: String });
 
 const history  = createWebHashHistory();
 export const router = createRouter({
@@ -23,15 +31,15 @@ export const router = createRouter({
                 },
                 {
                     path: 'intor',
-                    component: md('intor.md')
+                    component: md(intor)
                 },
                 {
                     path: 'install',
-                    component: md('install.md')
+                    component: md(install)
                 },
                 {
                     path: 'get-started',
-                    component: md('get-started.md')
+                    component: md(getStarted)
                 },
                 {
                     path: 'switch', 
