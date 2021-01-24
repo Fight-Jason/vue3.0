@@ -18,7 +18,11 @@ export const router = createRouter({
         {path: '/doc', component: Doc ,
             children: [
                 {
-                    path: 'intro',
+                    path: '',
+                    redirect: '/doc/intor'
+                },
+                {
+                    path: 'intor',
                     component: md('intor.md')
                 },
                 {

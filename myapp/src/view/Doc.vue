@@ -6,7 +6,7 @@
         <h2>文档</h2>
         <ol>
           <li>
-            <router-link to="/doc/intro">介绍</router-link>
+            <router-link to="/doc/intor">介绍</router-link>
           </li>
           <li>
             <router-link to="/doc/install">安装</router-link>
@@ -61,7 +61,7 @@ export default {
   }
   > .content {
     flex-grow: 1;
-    padding-top: 10px;
+    padding-top: 60px;
     padding-left: 156px;
     @media (max-width: 500px) {
       padding-left: 0; 
@@ -88,6 +88,7 @@ aside {
   left: 0;
   padding-top: 70px;
   height: 100%;
+  z-index: 10;
   > h2 {
     padding: 0 16px;
     margin-bottom: 4px;
