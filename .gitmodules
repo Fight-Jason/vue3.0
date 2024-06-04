@@ -1,0 +1,3 @@
+[submodule "myapp/common"]
+	path = myapp/common
+	url = git@github.com:Fight-Jason/study-TypeScript.git
